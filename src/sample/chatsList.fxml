@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="597.0" prefWidth="438.9999000000025" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+  <bottom>
+    <Button fx:id="bVolver" mnemonicParsing="false" onAction="#changeToPrincipal" text="Button" />
+  </bottom>
+  <center>
+    <VBox prefHeight="200.0" prefWidth="100.0">
+      <children>
+        <HBox alignment="CENTER_LEFT" onMouseClicked="#changeToSingleChat" prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <ImageView fitHeight="100.0" fitWidth="133.33333333333331" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../data/user.png" />
+              </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="313.0" text="Nombre del usuario/Grupo">
+              <font>
+                <Font size="25.0" fx:id="x1" />
+              </font>
+            </Label>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" onMouseClicked="#changeToSingleChat" prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <ImageView fitHeight="100.0" fitWidth="133.33333333333331" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="file:/E:/GITHUB/GUI%20FIS/src/data/user.png" />
+              </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" font="$x1" prefWidth="313.0" text="Nombre del usuario/Grupo" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" onMouseClicked="#changeToSingleChat" prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <ImageView fitHeight="100.0" fitWidth="133.33333333333331" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="file:/E:/GITHUB/GUI%20FIS/src/data/user.png" />
+              </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" font="$x1" prefWidth="313.0" text="Nombre del usuario/Grupo" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" onMouseClicked="#changeToSingleChat" prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <ImageView fitHeight="100.0" fitWidth="133.33333333333331" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="file:/E:/GITHUB/GUI%20FIS/src/data/user.png" />
+              </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" font="$x1" prefWidth="313.0" text="Nombre del usuario/Grupo" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" onMouseClicked="#changeToSingleChat" prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <ImageView fitHeight="100.0" fitWidth="133.33333333333331" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="file:/E:/GITHUB/GUI%20FIS/src/data/user.png" />
+              </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" font="$x1" prefWidth="313.0" text="Nombre del usuario/Grupo" />
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </center>
+  <top>
+    <MenuBar>
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Close" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </top>
+</BorderPane>

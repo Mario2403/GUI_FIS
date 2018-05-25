@@ -33,6 +33,9 @@ public class Controller {
     Button bPerfil;
 
     @FXML
+    Button bVolver;
+
+    @FXML
     void initialize() {
 
 
@@ -40,15 +43,14 @@ public class Controller {
 
     @FXML
     void exit(){
-        System.out.println("Salir");
-
+        System.exit(0);
     }
 
     @FXML
-    void changeToChats() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("chatsView.fxml"));
+    void changeToChatsList() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("chatsList.fxml"));
         Stage stage =(Stage)bChats.getScene().getWindow();
-        stage.setScene(new Scene(root, 382, 458));
+        stage.setScene(new Scene(root, 439, 597));
         stage.setResizable(false);
     }
 
@@ -68,5 +70,27 @@ public class Controller {
         stage.setResizable(false);
     }
 
+    @FXML
+    void showAboutUs() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("AboutUs.fxml"));
+        Stage stage =(Stage)bSalir.getScene().getWindow();
+        stage.setScene(new Scene(root, 634, 339));
+        stage.setResizable(false);
+    }
 
+    @FXML
+    void changeToPrincipal() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Stage stage =(Stage)bVolver.getScene().getWindow();
+        stage.setScene(new Scene(root, 556, 345));
+        stage.setResizable(false);
+    }
+
+    @FXML
+    void changeToSingleChat() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("chatsView.fxml"));
+        Stage stage =(Stage)bVolver.getScene().getWindow();
+        stage.setScene(new Scene(root, 382, 458));
+        stage.setResizable(false);
+    }
 }

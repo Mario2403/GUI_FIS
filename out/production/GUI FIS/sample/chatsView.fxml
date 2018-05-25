@@ -25,12 +25,16 @@
   <center>
     <VBox prefHeight="200.0" prefWidth="100.0">
       <children>
-        <Label opacity="1.0" prefHeight="37.0" prefWidth="363.0" style="-fx-background-color: white" text="Hola! (Enviado)" textAlignment="LEFT" textFill="BLACK">
+        <Label opacity="1.0" prefHeight="37.0" prefWidth="363.0" style="-fx-background-radius: 0 20 20 0;&#10;-fx-background-color: lightgray" text="Hola! (Enviado)" textAlignment="LEFT" textFill="BLACK">
           <VBox.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
           </VBox.margin>
         </Label>
-        <Label alignment="CENTER_RIGHT" opacity="1.0" prefHeight="37.0" prefWidth="363.0" style="-fx-background-color: lightgreen" text="Hola!, que tal?" textAlignment="RIGHT" textFill="BLACK" />
+        <Label alignment="CENTER_RIGHT" opacity="1.0" prefHeight="37.0" prefWidth="363.0" style="-fx-background-radius: 20 0 0 20;&#10;-fx-background-color: lightgreen" styleClass="" text="Hola!, que tal?" textAlignment="RIGHT" textFill="BLACK" underline="false">
+          <VBox.margin>
+            <Insets bottom="5.0" left="5.0" top="5.0" />
+          </VBox.margin>
+        </Label>
       </children>
     </VBox>
   </center>

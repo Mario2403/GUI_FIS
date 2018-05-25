@@ -27,7 +27,7 @@
   <center>
     <HBox prefHeight="112.0" prefWidth="556.0">
       <children>
-        <Button fx:id="bChats" contentDisplay="CENTER" defaultButton="false" graphicTextGap="4.0" mnemonicParsing="false" onAction="#changeToChats" prefHeight="103.0" prefWidth="162.0" text="Chats" textAlignment="CENTER">
+        <Button fx:id="bChats" contentDisplay="CENTER" defaultButton="false" graphicTextGap="4.0" mnemonicParsing="false" onAction="#changeToChatsList" prefHeight="103.0" prefWidth="162.0" text="Chats" textAlignment="CENTER">
           <font>
             <Font size="25.0" fx:id="x1" />
           </font>
@@ -47,12 +47,12 @@
           <menus>
             <Menu mnemonicParsing="false" text="File">
               <items>
-                <MenuItem mnemonicParsing="false" text="Close" />
+                <MenuItem mnemonicParsing="false" onAction="#exit" text="Close" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Help">
               <items>
-                <MenuItem mnemonicParsing="false" text="About" />
+                <MenuItem mnemonicParsing="false" onAction="#showAboutUs" text="About" />
               </items>
             </Menu>
           </menus>
