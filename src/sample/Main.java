@@ -12,7 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("WhatsUPM");
+        primaryStage.setTitle("whatsUPM");
         primaryStage.getIcons().add(new Image("data/AppLogoTransparent.png"));
         primaryStage.setScene(new Scene(root, 556, 345));
         primaryStage.setResizable(false);
