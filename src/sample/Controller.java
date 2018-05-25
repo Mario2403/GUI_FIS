@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
@@ -28,6 +29,9 @@ public class Controller {
 
     @FXML
     Button bAgendas;
+
+    @FXML
+    Button bEnviar;
 
     @FXML
     Button bPerfil;
@@ -91,6 +95,21 @@ public class Controller {
         Parent root = FXMLLoader.load(getClass().getResource("chatsView.fxml"));
         Stage stage =(Stage)bVolver.getScene().getWindow();
         stage.setScene(new Scene(root, 382, 458));
+        stage.setResizable(false);
+    }
+
+    @FXML
+    void fileButtonBack() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Stage stage =(Stage)bEnviar.getScene().getWindow();
+        stage.setScene(new Scene(root, 439, 597));
+        stage.setResizable(false);
+    }
+    @FXML
+    void changeToChatsListFromSingleChat() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("chatsList.fxml"));
+        Stage stage =(Stage)bVolver.getScene().getWindow();
+        stage.setScene(new Scene(root, 439, 597));
         stage.setResizable(false);
     }
 }

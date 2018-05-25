@@ -14,9 +14,9 @@
     <HBox prefHeight="36.0" prefWidth="382.0">
       <children>
         <TextField prefHeight="34.0" prefWidth="304.0" />
-        <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="84.0" text="Enviar">
+        <Button fx:id="bEnviar" mnemonicParsing="false" prefHeight="34.0" prefWidth="84.0" text="Enviar">
           <font>
-            <Font size="16.0" />
+            <Font size="16.0" fx:id="x2" />
           </font>
         </Button>
       </children>
@@ -25,14 +25,14 @@
   <center>
     <VBox prefHeight="200.0" prefWidth="100.0">
       <children>
-        <Label opacity="1.0" prefHeight="37.0" prefWidth="363.0" style="-fx-background-radius: 0 20 20 0;&#10;-fx-background-color: lightgray" text="Hola! (Enviado)" textAlignment="LEFT" textFill="BLACK">
+        <Label opacity="1.0" prefHeight="37.0" prefWidth="363.0" style="-fx-background-radius: 0 20 20 0;&#10;-fx-background-color: lightgray" text="Hola!" textAlignment="LEFT" textFill="BLACK">
           <VBox.margin>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+            <Insets left="5.0" right="5.0" top="5.0" />
           </VBox.margin>
         </Label>
-        <Label alignment="CENTER_RIGHT" opacity="1.0" prefHeight="37.0" prefWidth="363.0" style="-fx-background-radius: 20 0 0 20;&#10;-fx-background-color: lightgreen" styleClass="" text="Hola!, que tal?" textAlignment="RIGHT" textFill="BLACK" underline="false">
+        <Label alignment="CENTER_RIGHT" opacity="1.0" prefHeight="37.0" prefWidth="363.0" style="-fx-background-radius: 20 0 0 20;&#10;-fx-background-color: lightgreen" styleClass="" text="(Recibido) Hola!, que tal?" textAlignment="RIGHT" textFill="BLACK" underline="false">
           <VBox.margin>
-            <Insets bottom="5.0" left="5.0" top="5.0" />
+            <Insets left="5.0" top="5.0" />
           </VBox.margin>
         </Label>
       </children>
@@ -45,7 +45,8 @@
           <menus>
             <Menu mnemonicParsing="false" text="File">
               <items>
-                <MenuItem mnemonicParsing="false" onMenuValidation="#exit" text="Close" />
+                <MenuItem mnemonicParsing="false" text="Volver" />
+                <MenuItem mnemonicParsing="false" onAction="#exit" text="Close" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Help">
@@ -62,7 +63,13 @@
                 <Image url="@../data/user.png" />
               </image>
             </ImageView>
-            <Label prefHeight="57.0" prefWidth="177.0" text="Nombre de la persona" HBox.margin="$x1" />
+            <Label prefHeight="57.0" prefWidth="177.0" text="Nombre de la persona">
+              <HBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+              </HBox.margin>
+            </Label>
+            <Region prefHeight="57.0" prefWidth="69.0" />
+            <Button fx:id="bVolver" font="$x2" mnemonicParsing="false" onAction="#changeToChatsListFromSingleChat" prefHeight="57.0" prefWidth="81.0" text="Volver" />
           </children>
           <VBox.margin>
             <Insets bottom="5.0" />
