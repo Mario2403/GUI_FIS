@@ -7,6 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <BorderPane prefHeight="460.0" prefWidth="502.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
   <center>
@@ -29,17 +30,24 @@
   <left>
     <Region prefHeight="436.0" prefWidth="150.0" />
   </left>
+  <right>
+    <Button id="bSalir" fx:id="bVolver" alignment="CENTER" cancelButton="false" contentDisplay="TEXT_ONLY" defaultButton="false" disable="true" focusTraversable="false" graphicTextGap="4.0" minHeight="24.0" minWidth="25.999900000002526" mnemonicParsing="false" prefHeight="24.0" prefWidth="25.999900000002526" text="TROLL" textAlignment="CENTER" underline="false" visible="false" wrapText="true">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Button>
+  </right>
   <top>
     <MenuBar>
       <menus>
         <Menu mnemonicParsing="false" text="File">
           <items>
-            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" onAction="#exit" text="Close" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
           <items>
-            <MenuItem mnemonicParsing="false" text="About" />
+            <MenuItem mnemonicParsing="false" onAction="#showAboutUs" text="About" />
           </items>
         </Menu>
       </menus>

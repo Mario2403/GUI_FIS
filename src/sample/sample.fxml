@@ -18,9 +18,10 @@
       <children>
         <Button fx:id="bSalir" alignment="CENTER" cancelButton="true" contentDisplay="TEXT_ONLY" defaultButton="false" focusTraversable="true" graphicTextGap="4.0" layoutX="469.0" layoutY="10.0" mnemonicParsing="false" onAction="#exit" prefHeight="37.0" prefWidth="72.99990000000253" text="Salir" textAlignment="CENTER" underline="false" visible="true" wrapText="true">
           <font>
-            <Font size="16.0" />
+            <Font size="16.0" fx:id="x2" />
           </font>
         </Button>
+        <Button id="bSalir" fx:id="bVolver" alignment="CENTER" cancelButton="false" contentDisplay="TEXT_ONLY" defaultButton="false" disable="true" focusTraversable="false" font="$x2" graphicTextGap="4.0" layoutX="443.0" layoutY="7.0" minHeight="24.0" minWidth="25.999900000002526" mnemonicParsing="false" prefHeight="24.0" prefWidth="25.999900000002526" text="TROLL" textAlignment="CENTER" underline="false" visible="false" wrapText="true" />
       </children>
     </Pane>
   </bottom>

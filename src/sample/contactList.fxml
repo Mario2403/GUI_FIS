@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="492.0" prefWidth="350.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+  <bottom>
+    <HBox alignment="CENTER_RIGHT" prefHeight="37.999900000002526" prefWidth="350.0">
+      <children>
+        <Button fx:id="bVolver" alignment="CENTER" contentDisplay="CENTER" defaultButton="false" mnemonicParsing="false" onAction="#changeToPrincipal" prefHeight="35.0" prefWidth="91.0" text="Volver" underline="false" wrapText="false">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Button>
+      </children>
+      <BorderPane.margin>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+      </BorderPane.margin>
+    </HBox>
+  </bottom>
+  <center>
+    <VBox disable="false" fillWidth="true" pickOnBounds="true" prefHeight="200.0" prefWidth="100.0">
+      <children>
+        <HBox minHeight="81.0" padding="$x1" prefHeight="81.0" prefWidth="350.0" spacing="15.0" VBox.margin="$x1">
+          <children>
+            <ImageView fitHeight="81.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../data/user.png" />
+              </image>
+            </ImageView>
+            <Label prefHeight="76.0" prefWidth="204.0" text="Usuario1">
+              <font>
+                <Font size="30.0" fx:id="x2" />
+              </font>
+            </Label>
+          </children>
+        </HBox>
+        <HBox minHeight="81.0" prefHeight="81.0" prefWidth="350.0" spacing="15.0">
+          <children>
+            <ImageView fitHeight="81.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="file:/E:/GITHUB/GUI%20FIS/src/data/user.png" />
+              </image>
+            </ImageView>
+            <Label font="$x2" prefHeight="76.0" prefWidth="204.0" text="Usuario1" />
+          </children>
+          <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+          </padding>
+          <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+          </VBox.margin>
+        </HBox>
+        <HBox minHeight="81.0" prefHeight="81.0" prefWidth="350.0" spacing="15.0" VBox.margin="$x1">
+          <children>
+            <ImageView fitHeight="81.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="file:/E:/GITHUB/GUI%20FIS/src/data/user.png" />
+              </image>
+            </ImageView>
+            <Label font="$x2" prefHeight="76.0" prefWidth="204.0" text="Usuario1" />
+          </children>
+          <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+          </padding>
+        </HBox>
+        <HBox minHeight="81.0" prefHeight="81.0" prefWidth="350.0" spacing="15.0" VBox.margin="$x1">
+          <children>
+            <ImageView fitHeight="81.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="file:/E:/GITHUB/GUI%20FIS/src/data/user.png" />
+              </image>
+            </ImageView>
+            <Label font="$x2" prefHeight="76.0" prefWidth="204.0" text="Usuario1" />
+          </children>
+          <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+          </padding>
+        </HBox>
+      </children>
+    </VBox>
+  </center>
+  <top>
+    <MenuBar>
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#exit" text="Close" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#showAboutUs" text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </top>
+</BorderPane>

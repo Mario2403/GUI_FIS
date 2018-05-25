@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="597.0" prefWidth="438.9999000000025" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+<BorderPane prefHeight="597.0" prefWidth="438.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
   <bottom>
     <HBox alignment="BOTTOM_RIGHT" prefHeight="34.0" prefWidth="439.0" BorderPane.alignment="BOTTOM_RIGHT">
       <children>
@@ -45,7 +45,7 @@
           <children>
             <ImageView fitHeight="100.0" fitWidth="133.33333333333331" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="file:/E:/GITHUB/GUI%20FIS/src/data/user.png" />
+                <Image url="@../data/user.png" />
               </image>
             </ImageView>
             <Label alignment="CENTER" contentDisplay="CENTER" font="$x1" prefWidth="313.0" text="Nombre del usuario/Grupo" />
@@ -55,7 +55,7 @@
           <children>
             <ImageView fitHeight="100.0" fitWidth="133.33333333333331" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="file:/E:/GITHUB/GUI%20FIS/src/data/user.png" />
+                <Image url="@../data/user.png" />
               </image>
             </ImageView>
             <Label alignment="CENTER" contentDisplay="CENTER" font="$x1" prefWidth="313.0" text="Nombre del usuario/Grupo" />
@@ -65,7 +65,7 @@
           <children>
             <ImageView fitHeight="100.0" fitWidth="133.33333333333331" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="file:/E:/GITHUB/GUI%20FIS/src/data/user.png" />
+                <Image url="@../data/user.png" />
               </image>
             </ImageView>
             <Label alignment="CENTER" contentDisplay="CENTER" font="$x1" prefWidth="313.0" text="Nombre del usuario/Grupo" />
@@ -75,7 +75,7 @@
           <children>
             <ImageView fitHeight="100.0" fitWidth="133.33333333333331" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="file:/E:/GITHUB/GUI%20FIS/src/data/user.png" />
+                <Image url="@../data/user.png" />
               </image>
             </ImageView>
             <Label alignment="CENTER" contentDisplay="CENTER" font="$x1" prefWidth="313.0" text="Nombre del usuario/Grupo" />
@@ -89,12 +89,12 @@
       <menus>
         <Menu mnemonicParsing="false" text="File">
           <items>
-            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" onAction="#exit" text="Close" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
           <items>
-            <MenuItem mnemonicParsing="false" text="About" />
+            <MenuItem mnemonicParsing="false" onAction="#showAboutUs" text="About" />
           </items>
         </Menu>
       </menus>
