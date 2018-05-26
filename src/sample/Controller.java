@@ -1,26 +1,21 @@
 package sample;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import whatsUPM.Chat;
 import whatsUPM.Mensaje;
 import whatsUPM.Usuario;
-
-import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
 
 public class Controller {
 
@@ -37,6 +32,7 @@ public class Controller {
     @FXML
     private URL location;
 
+    //ViewPrincipal
     @FXML
     Button bSalir;
 
@@ -55,6 +51,7 @@ public class Controller {
     @FXML
     Button bVolver;
 
+    //View Chats
     @FXML
     TextField sentText;
 
@@ -63,6 +60,48 @@ public class Controller {
 
     @FXML
     Label sentMessage;
+
+    @FXML
+    ImageView fotoOtroPerfil;
+
+    @FXML
+    Label aliasOtroPerfil;
+
+
+    //View Perfil
+
+    @FXML
+    Label alias;
+
+    @FXML
+    Label correo;
+
+    @FXML
+    Label descripcion;
+
+    @FXML
+    ImageView fotoPerfil;
+
+    //View Agendas View
+
+    @FXML
+    Label categoria;
+
+    //ChatsList View
+
+    @FXML
+    Label aliasLista;
+
+    @FXML
+    ImageView fotoLista;
+
+    //AgendaList View
+
+    @FXML
+    Label aliasListaAgenda;
+
+    @FXML
+    ImageView fotoListaAgenda;
 
     void initialize() {
 
@@ -82,6 +121,13 @@ public class Controller {
     }
 
     @FXML
+    void refreshList(){
+        fotoLista.setImage(this.usuario.getAgendas().get(0).getContactos().get(0).getFoto());
+        aliasLista.setText(this.usuario.getAgendas().get(0).getContactos().get(0).getAlias());
+
+    }
+
+    @FXML
     void changeToAgendas() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("agendasView.fxml"));
         Stage stage =(Stage)bAgendas.getScene().getWindow();
@@ -95,6 +141,16 @@ public class Controller {
         Stage stage =(Stage)bPerfil.getScene().getWindow();
         stage.setScene(new Scene(root, 502, 460));
         stage.setResizable(false);
+
+
+
+    }
+    @FXML
+    private void showPerfil() {
+        alias.setText(this.usuario.getPerfil().getAlias());
+        correo.setText(this.usuario.getCorreo());
+        descripcion.setText(this.usuario.getPerfil().getDescripcion());
+        fotoPerfil.setImage(this.usuario.getPerfil().getFoto());
     }
 
     @FXML
@@ -132,6 +188,10 @@ public class Controller {
     }
     @FXML
     void refresh() {
+
+        fotoOtroPerfil.setImage(this.usuario.getAgendas().get(0).getContactos().get(0).getFoto());
+        aliasOtroPerfil.setText(this.usuario.getAgendas().get(0).getContactos().get(0).getAlias());
+
 
         ArrayList<Mensaje> mensajes = this.usuario.getChats().get(0).getMensajes();
 
@@ -184,6 +244,11 @@ public class Controller {
         stage.setScene(new Scene(root, 350, 492));
         stage.setResizable(false);
 
+    }
+    @FXML
+    void refreshAgendaList(){
+        fotoListaAgenda.setImage(this.usuario.getAgendas().get(0).getContactos().get(0).getFoto());
+        aliasListaAgenda.setText(this.usuario.getAgendas().get(0).getContactos().get(0).getAlias());
     }
 
     @FXML

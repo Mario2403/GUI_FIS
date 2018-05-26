@@ -59,12 +59,12 @@
         </MenuBar>
         <HBox cache="true" cacheHint="DEFAULT" prefHeight="100.0" prefWidth="200.0" spacing="0.0" style="-fx-border-color:black">
           <children>
-            <ImageView fitHeight="57.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="fotoPerfil" fx:id="fotoOtroPerfil" fitHeight="57.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
               <image>
                 <Image url="@../data/user.png" />
               </image>
             </ImageView>
-            <Label prefHeight="57.0" prefWidth="177.0" text="Nombre persona">
+            <Label fx:id="aliasOtroPerfil" prefHeight="57.0" prefWidth="177.0" text="Nombre persona">
               <font>
                 <Font size="18.0" />
               </font>

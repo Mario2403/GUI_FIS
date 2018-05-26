@@ -12,6 +12,8 @@
 
 package whatsUPM;
 
+import javafx.scene.image.Image;
+
 import java.util.ArrayList;
 
 public class Usuario implements InterfazUsuario {
@@ -32,25 +34,33 @@ public class Usuario implements InterfazUsuario {
 	    this.contrasena=contrasena;
 	    this.chatFactory=new ChatFactory();
 	    this.chats= new ArrayList<>();
+	    this.agendas=new ArrayList<>();
 
 
-
-
-	
 	}
 	public void init(){
 
+
+
         ArrayList<Perfil> integrantes = new ArrayList<>();
-        Perfil perfil = new Perfil("pepe");
+
+        Perfil perfil = new Perfil("Pepe");
         integrantes.add(perfil);
+        perfil.setFoto(new Image("data/OtherUser.png"));
+        perfil.setDescripcion("Mecánico a tiempo completo");
 
+        Agenda agenda = new Agenda(integrantes, "Amigos", 0);
+        this.agendas.add(agenda);
 
-        this.crearChat(integrantes);
+        this.crearChat(this.agendas.get(0).getContactos());
 
         ArrayList<Mensaje> mensajes = new ArrayList<>();
-        mensajes.add(new Mensaje("Holaaaa", this.idUsuario));
+        mensajes.add(new Mensaje("Muy bien, ¡gracias!", this.idUsuario));
         this.getChats().get(0).setMensajes(mensajes);
 
+        this.setPerfil(new Perfil("Jacinto"));
+        this.getPerfil().setFoto(new Image("data/mainUser.jpg"));
+        this.getPerfil().setDescripcion("Hola, soy Jacinto, ¡un apasionado por las motos y la velocidad!");
 
 
 

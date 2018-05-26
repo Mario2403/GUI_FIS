@@ -25,60 +25,16 @@
     </HBox>
   </bottom>
   <center>
-    <VBox prefHeight="200.0" prefWidth="100.0">
+    <VBox onMouseClicked="#refreshList" prefHeight="200.0" prefWidth="100.0">
       <children>
         <HBox alignment="CENTER_LEFT" onMouseClicked="#changeToSingleChat" prefHeight="100.0" prefWidth="200.0">
           <children>
-            <ImageView fitHeight="100.0" fitWidth="133.33333333333331" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../data/user.png" />
-              </image>
-            </ImageView>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="313.0" text="Nombre del usuario/Grupo">
+            <ImageView fx:id="fotoLista" fitHeight="100.0" fitWidth="133.33333333333331" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="aliasLista" alignment="CENTER" contentDisplay="CENTER" prefWidth="313.0" text="">
               <font>
                 <Font size="25.0" fx:id="x1" />
               </font>
             </Label>
-          </children>
-        </HBox>
-        <HBox alignment="CENTER_LEFT" onMouseClicked="#changeToSingleChat" prefHeight="100.0" prefWidth="200.0">
-          <children>
-            <ImageView fitHeight="100.0" fitWidth="133.33333333333331" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../data/user.png" />
-              </image>
-            </ImageView>
-            <Label alignment="CENTER" contentDisplay="CENTER" font="$x1" prefWidth="313.0" text="Nombre del usuario/Grupo" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER_LEFT" onMouseClicked="#changeToSingleChat" prefHeight="100.0" prefWidth="200.0">
-          <children>
-            <ImageView fitHeight="100.0" fitWidth="133.33333333333331" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../data/user.png" />
-              </image>
-            </ImageView>
-            <Label alignment="CENTER" contentDisplay="CENTER" font="$x1" prefWidth="313.0" text="Nombre del usuario/Grupo" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER_LEFT" onMouseClicked="#changeToSingleChat" prefHeight="100.0" prefWidth="200.0">
-          <children>
-            <ImageView fitHeight="100.0" fitWidth="133.33333333333331" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../data/user.png" />
-              </image>
-            </ImageView>
-            <Label alignment="CENTER" contentDisplay="CENTER" font="$x1" prefWidth="313.0" text="Nombre del usuario/Grupo" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER_LEFT" onMouseClicked="#changeToSingleChat" prefHeight="100.0" prefWidth="200.0">
-          <children>
-            <ImageView fitHeight="100.0" fitWidth="133.33333333333331" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../data/user.png" />
-              </image>
-            </ImageView>
-            <Label alignment="CENTER" contentDisplay="CENTER" font="$x1" prefWidth="313.0" text="Nombre del usuario/Grupo" />
           </children>
         </HBox>
       </children>
