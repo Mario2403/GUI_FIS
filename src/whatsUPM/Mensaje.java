@@ -22,48 +22,64 @@ public class Mensaje implements InterfaceMensaje {
 	private Boolean esVisto;
 
 	public  Mensaje(String texto, Integer usuarioOrigen) {
+	    this.texto=texto;
+	    this.usuarioOrigen=usuarioOrigen;
 	
 	}
-	
-	public void setEsRecibido(Boolean esRecibido) {
-	
-	}
-	
-	public void setEsVisto(Boolean esVisto) {
-	
-	}
-	
-	public String getTexto() {
-        return null;
-	}
-	
-	public Integer getUsuarioOrigen() {
-        return null;
-	}
-	
-	public Date getFecha() {
-        return null;
-	}
-	
-	public Boolean getEsRecibido() {
-        return null;
-	}
-	
-	public Boolean getEsVisto() {
-        return null;
-	}
-	
-	public void destroy() {
+
+    public String getTexto() {
+        return texto;
+    }
+
+    public void setTexto(String texto) {
+        this.texto = texto;
+    }
+
+    public Integer getUsuarioOrigen() {
+        return usuarioOrigen;
+    }
+
+    public void setUsuarioOrigen(Integer usuarioOrigen) {
+        this.usuarioOrigen = usuarioOrigen;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Boolean getEsRecibido() {
+        return esRecibido;
+    }
+
+    public void setEsRecibido(Boolean esRecibido) {
+        this.esRecibido = esRecibido;
+    }
+
+    public Boolean getEsVisto() {
+        return esVisto;
+    }
+
+    public void setEsVisto(Boolean esVisto) {
+        this.esVisto = esVisto;
+    }
+
+    public void destroy() {
 	
 	}
 
     @Override
     public void marcarComoRecibido() {
+	    this.esRecibido=true;
 
     }
 
     @Override
     public void marcarComoLeido() {
+	    this.esVisto=true;
 
     }
 }

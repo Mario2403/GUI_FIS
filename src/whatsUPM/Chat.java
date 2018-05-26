@@ -20,42 +20,38 @@ public class Chat implements InterfaceChat {
 	private Date fecha;
 	private ArrayList<Perfil> integrantes;
 	private ArrayList<Mensaje> mensajes;
-	public Usuario Pertenece;
 
-	public Chat() {
-	
-	}
-	
-	public void setFecha(Date fecha) {
-	
-	}
-	
-	public void setMensajes(ArrayList<Mensaje> mensajes) {
-	
-	}
-	
-	public void setIntegrantes(ArrayList<Perfil> integrantes) {
-	
-	}
-	
-	public Date getFecha() {
 
-	return null;
-	}
+	public Chat(ArrayList<Perfil> integrantes) {
+	    this.integrantes=integrantes;
 	
-	public ArrayList<Mensaje> getMensajes() {
-        return null;
 	}
-	
-	public ArrayList<Perfil> getIntegrantes() {
-        return null;
-	}
-	
-	public boolean enviarMensaje() {
 
-        return true;
-	}
-	
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public ArrayList<Perfil> getIntegrantes() {
+        return integrantes;
+    }
+
+    public void setIntegrantes(ArrayList<Perfil> integrantes) {
+        this.integrantes = integrantes;
+    }
+
+    public ArrayList<Mensaje> getMensajes() {
+        return mensajes;
+    }
+
+    public void setMensajes(ArrayList<Mensaje> mensajes) {
+        this.mensajes = mensajes;
+    }
+
+
 	public void destroy() {
 	
 	}

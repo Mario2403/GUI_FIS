@@ -22,47 +22,51 @@ public class Perfil implements InterfacePerfil {
 	private String alias;
 
 	public Perfil(String alias) {
+	    this.alias=alias;
 	
 	}
-	
-	public void setFoto(Image foto) {
-	
-	}
-	
-	public void setEstado(String estado) {
-	
-	}
-	
-	public void setDescripcion(String descripcion) {
-	
-	}
-	
-	public void setAlias(String alias) {
-	
-	}
-	
-	public Image getFoto() {
 
-        return null;
-	}
-	
-	public Integer getIdPerfil() {
-        return null;
-	}
-	
-	public String getEstado() {
-        return null;
-	}
-	
-	public String getDescripcion() {
-        return null;
-	}
-	
-	public String getAlias() {
-        return null;
-	}
-	
-	public void modificarPerfil() {
+    public Image getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Image foto) {
+        this.foto = foto;
+    }
+
+    public Integer getIdPerfil() {
+        return idPerfil;
+    }
+
+    public void setIdPerfil(Integer idPerfil) {
+        this.idPerfil = idPerfil;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
+    public void modificarPerfil() {
 	
 	}
 	

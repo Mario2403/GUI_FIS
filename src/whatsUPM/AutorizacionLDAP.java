@@ -13,7 +13,7 @@ package whatsUPM;
 
 
 public class AutorizacionLDAP {
-	public Usuario Autoriza;
+
 
 
 	public  AutorizacionLDAP() {

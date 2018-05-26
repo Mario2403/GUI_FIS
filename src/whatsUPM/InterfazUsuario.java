@@ -12,12 +12,15 @@
 package whatsUPM;
 
 
+import java.util.ArrayList;
+
 public interface InterfazUsuario {
 	public void cambiarContrasena();
 	
-	public void crearChat();
-	
-	public void seleccionarAgendaFavorita();
+	public void crearChat(ArrayList<Perfil> perfiles);
+
+
+    public void seleccionarAgendaFavorita();
 	
 	public void verPerfil();
 

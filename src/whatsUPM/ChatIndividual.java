@@ -17,14 +17,10 @@ import java.util.ArrayList;
 public class ChatIndividual extends Chat {
 
 	public  ChatIndividual(ArrayList<Perfil> integrantes) {
+	    super(integrantes);
 	
 	}
-	
-	public Perfil[] getUsuarios() {
 
-	    return null;
-	}
-	
 	public void destroy() {
 	
 	}

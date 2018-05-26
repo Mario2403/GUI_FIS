@@ -21,15 +21,16 @@ public class ChatGrupal extends Chat {
 	private String nombre;
 
 	public  ChatGrupal(ArrayList<Perfil> integrantes) {
+	    super(integrantes);
 	
 	}
 	
 	public void setImagen(Image imagen) {
-	
+	this.imagen=imagen;
 	}
 	
 	public void setNombre(String nombre) {
-	
+	this.nombre=nombre;
 	}
 	
 	public void introducirUsuariosGrupo() {
@@ -37,21 +38,18 @@ public class ChatGrupal extends Chat {
 	}
 	
 	public void introducirNombreImagenGrupo(String nombre, Image imagen) {
-	
+	this.nombre=nombre;
+	this.imagen=imagen;
 	}
 	
 	public Image getImagen() {
-        return null;
+        return this.imagen;
 	}
 	
 	public String getNombre() {
-        return null;
+        return this.nombre;
 	}
-	
-	public ArrayList<Perfil> getUsuarios() {
-        return null;
-	}
-	
+
 	public void destroy() {
 	
 	}

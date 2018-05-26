@@ -1,6 +1,8 @@
 package sample;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -8,15 +10,26 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import whatsUPM.Chat;
+import whatsUPM.Mensaje;
+import whatsUPM.Usuario;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
 public class Controller {
+
+    public Controller() {
+        this.usuario = new Usuario(1, "correo1", "contra1");
+        this.usuario.init();
+    }
+
+    private Usuario usuario;
 
     @FXML
     private ResourceBundle resources;
@@ -51,9 +64,7 @@ public class Controller {
     @FXML
     Label sentMessage;
 
-    @FXML
     void initialize() {
-
 
     }
 
@@ -105,11 +116,11 @@ public class Controller {
     @FXML
     void changeToSingleChat() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("chatsView.fxml"));
-        Stage stage =(Stage)bVolver.getScene().getWindow();
+        Stage stage = (Stage) bVolver.getScene().getWindow();
         stage.setScene(new Scene(root, 382, 458));
         stage.setResizable(false);
-    }
 
+    }
 
     @FXML
     void changeToChatsListFromSingleChat() throws IOException {
@@ -117,18 +128,53 @@ public class Controller {
         Stage stage =(Stage)bVolver.getScene().getWindow();
         stage.setScene(new Scene(root, 439, 597));
         stage.setResizable(false);
+
+    }
+    @FXML
+    void refresh() {
+
+        ArrayList<Mensaje> mensajes = this.usuario.getChats().get(0).getMensajes();
+
+        int size = chatsPane.getChildren().size();
+        boolean alreadyInto = false;
+        for (Mensaje mensaje : mensajes) {
+
+
+            Label label = new Label(mensaje.getTexto());        //Creamos el mensaje "gráficamente"
+            label.setStyle(sentMessage.getStyle());
+            label.setAlignment(sentMessage.getAlignment());
+            label.setPrefSize(363, 37);
+
+
+
+            for (int i = 0; i <size ; i++) {                        //Confirmamos que no se haya mostrado ya
+                Label l =(Label)chatsPane.getChildren().get(i);
+
+                if (l.getText().equalsIgnoreCase(label.getText())){
+                    alreadyInto= true;
+                }
+            }
+
+        if (!alreadyInto)chatsPane.getChildren().add(label);        //Añadimos el mensaje a la conversación
+
+
+
+        }
     }
     @FXML
     void sendMessage(){
-        //Nuevo mensaje...
+
+
         String texto = sentText.getText();
-        Label label= new Label(texto);
+    if(!texto.equalsIgnoreCase("")) {                             //Si el mensaje no está vacio...
+        Mensaje mensaje = new Mensaje(texto, this.usuario.getIdUsuario());   //Nuevo mensaje
+        this.usuario.getChats().get(0).getMensajes().add(mensaje);           //Lo añadimos al chat
+        Label label = new Label(texto);                                      //Lo creamos "gráficamente"
         label.setStyle(sentMessage.getStyle());
         label.setAlignment(sentMessage.getAlignment());
         label.setPrefSize(363, 37);
-        chatsPane.getChildren().add(label);
-
-
+        chatsPane.getChildren().add(label);                                   //Lo añadimos al resto de la conversación
+}
     }
 
     @FXML

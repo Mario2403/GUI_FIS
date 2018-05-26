@@ -21,48 +21,56 @@ public class Agenda implements InterfazAgenda {
 	private String categoria;
 	private Date fechaCreacion;
 	private ArrayList<Perfil> contactos;
-	public Usuario Contiene;
-	public Usuario Tiene;
-	public Usuario Pertenece;
+
 
 	public  Agenda(ArrayList<Perfil> listaContactos, String categoria, Integer idAgenda) {
+	    this.contactos=listaContactos;
+	    this.categoria=categoria;
+	    this.idAgenda=idAgenda;
 	
 	}
-	
-	public void setFavorito(Boolean favorito) {
-	
-	}
-	
-	public void setCategoria(String nombre) {
-	
-	}
-	
-	public void setContactos(ArrayList<Perfil> contactos) {
-	
-	}
-	
-	public boolean getFavorito() {
 
-	    return true;
-	}
-	
-	public void getId() {
-	
-	}
-	
-	public String getCategoria() {
-        return null;
-	}
-	
-	public Date getfechaCreacion() {
-        return null;
-	}
-	
-	public ArrayList<Perfil> getContactos() {
-        return null;
-	}
-	
-	public void modificarAgenda() {
+    public Boolean getEsFavorito() {
+        return esFavorito;
+    }
+
+    public void setEsFavorito(Boolean esFavorito) {
+        this.esFavorito = esFavorito;
+    }
+
+    public Integer getIdAgenda() {
+        return idAgenda;
+    }
+
+    public void setIdAgenda(Integer idAgenda) {
+        this.idAgenda = idAgenda;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public ArrayList<Perfil> getContactos() {
+        return contactos;
+    }
+
+    public void setContactos(ArrayList<Perfil> contactos) {
+        this.contactos = contactos;
+    }
+
+    public void modificarAgenda() {
 
 	}
 	
@@ -85,11 +93,13 @@ public class Agenda implements InterfazAgenda {
 
     @Override
     public void marcarComoFavorito() {
+	    this.esFavorito=true;
 
     }
 
     @Override
     public void cambiarNombreAgenda(String categoria) {
+	    this.categoria=categoria;
 
     }
 
@@ -100,6 +110,7 @@ public class Agenda implements InterfazAgenda {
 
     @Override
     public void eliminarAgenda() {
+	    this.destroy();;
 
     }
 }

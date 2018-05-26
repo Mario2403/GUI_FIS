@@ -16,6 +16,9 @@ import java.util.ArrayList;
 
 public class ChatFactory implements ChatFactoryMethod {
 	public Chat createChat(ArrayList<Perfil> integrantes) {
-        return null;
+	    if(integrantes.size()==1){
+	        return new ChatIndividual(integrantes);
+        }else return new ChatGrupal(integrantes);
+
 	}
 }
