@@ -29,12 +29,8 @@
       <children>
         <HBox minHeight="81.0" padding="$x1" prefHeight="81.0" prefWidth="350.0" spacing="15.0" VBox.margin="$x1">
           <children>
-            <ImageView fx:id="fotoListaAgenda" fitHeight="81.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../data/user.png" />
-              </image>
-            </ImageView>
-            <Label fx:id="aliasListaAgenda" prefHeight="76.0" prefWidth="204.0" text="Usuario1">
+            <ImageView fx:id="fotoListaAgenda" fitHeight="81.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="aliasListaAgenda" prefHeight="76.0" prefWidth="204.0" text="">
               <font>
                 <Font size="30.0" fx:id="x2" />
               </font>

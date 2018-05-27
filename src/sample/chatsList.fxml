@@ -25,7 +25,7 @@
     </HBox>
   </bottom>
   <center>
-    <VBox onMouseClicked="#refreshList" prefHeight="200.0" prefWidth="100.0">
+    <VBox onMouseMoved="#refreshList" prefHeight="200.0" prefWidth="100.0">
       <children>
         <HBox alignment="CENTER_LEFT" onMouseClicked="#changeToSingleChat" prefHeight="100.0" prefWidth="200.0">
           <children>

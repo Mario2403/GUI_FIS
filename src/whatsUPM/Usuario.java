@@ -16,30 +16,30 @@ import javafx.scene.image.Image;
 
 import java.util.ArrayList;
 
+
 public class Usuario implements InterfazUsuario {
 
-	private Integer idUsuario;
-	private String correo;
-	private String contrasena;
-	private ArrayList<Agenda> agendas;
-	private Perfil perfil;
-	private ArrayList<Chat> chats;
-	private ChatFactoryMethod chatFactory;
+    private Integer idUsuario;
+    private String correo;
+    private String contrasena;
+    private ArrayList<Agenda> agendas;
+    private Perfil perfil;
+    private ArrayList<Chat> chats;
+    private ChatFactoryMethod chatFactory;
 
 
+    public Usuario(Integer idUsuario, String correo, String contrasena) {
+        this.idUsuario = idUsuario;
+        this.correo = correo;
+        this.contrasena = contrasena;
+        this.chatFactory = new ChatFactory();
+        this.chats = new ArrayList<>();
+        this.agendas = new ArrayList<>();
 
-	public Usuario(Integer idUsuario, String correo, String contrasena) {
-	    this.idUsuario=idUsuario;
-	    this.correo=correo;
-	    this.contrasena=contrasena;
-	    this.chatFactory=new ChatFactory();
-	    this.chats= new ArrayList<>();
-	    this.agendas=new ArrayList<>();
 
+    }
 
-	}
-	public void init(){
-
+    public void init() {
 
 
         ArrayList<Perfil> integrantes = new ArrayList<>();
@@ -55,7 +55,7 @@ public class Usuario implements InterfazUsuario {
         this.crearChat(this.agendas.get(0).getContactos());
 
         ArrayList<Mensaje> mensajes = new ArrayList<>();
-        mensajes.add(new Mensaje("Muy bien, ¡gracias!", this.idUsuario));
+        mensajes.add(new Mensaje("Respondemeee!", this.idUsuario));
         this.getChats().get(0).setMensajes(mensajes);
 
         this.setPerfil(new Perfil("Jacinto"));
@@ -63,55 +63,53 @@ public class Usuario implements InterfazUsuario {
         this.getPerfil().setDescripcion("Hola, soy Jacinto, ¡un apasionado por las motos y la velocidad!");
 
 
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public void setAgendas(ArrayList<Agenda> agendas) {
+        this.agendas = agendas;
 
     }
-	
-	public void setContrasena(String contrasena) {
-	this.contrasena=contrasena;
-	}
-	
-	public void setAgendas(ArrayList<Agenda> agendas) {
-	    this.agendas=agendas;
-	
-	}
-	
-	public void setPerfil(Perfil perfil) {
-	    this.perfil=perfil;
-	
-	}
-	
-	public void setChats(ArrayList<Chat> chats) {
-	    this.chats=chats;
-	
-	}
-	
-	public Integer getIdUsuario() {
+
+    public void setPerfil(Perfil perfil) {
+        this.perfil = perfil;
+    }
+
+    public void setChats(ArrayList<Chat> chats) {
+        this.chats = chats;
+
+    }
+
+    public Integer getIdUsuario() {
         return this.idUsuario;
-	}
-	
-	public String getCorreo() {
+    }
+
+    public String getCorreo() {
         return this.correo;
-	}
-	
-	public String getContrasena() {
+    }
+
+    public String getContrasena() {
         return this.contrasena;
-	}
-	
-	public ArrayList<Agenda> getAgendas() {
+    }
+
+    public ArrayList<Agenda> getAgendas() {
         return this.agendas;
-	}
-	
-	public Perfil getPerfil() {
+    }
+
+    public Perfil getPerfil() {
         return this.perfil;
-	}
-	
-	public ArrayList<Chat> getChats() {
+    }
+
+    public ArrayList<Chat> getChats() {
         return this.chats;
-	}
-	
-	public void destroy() {
-	
-	}
+    }
+
+    public void destroy() {
+
+    }
 
     @Override
     public void cambiarContrasena() {
@@ -121,7 +119,7 @@ public class Usuario implements InterfazUsuario {
     @Override
     public void crearChat(ArrayList<Perfil> perfiles) {
 
-	    this.chats.add(this.chatFactory.createChat(perfiles));
+        this.chats.add(this.chatFactory.createChat(perfiles));
     }
 
     @Override

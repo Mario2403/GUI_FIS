@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="458.0" prefWidth="382.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+<BorderPane onMouseMoved="#refresh" prefHeight="458.0" prefWidth="382.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
   <bottom>
     <HBox prefHeight="36.0" prefWidth="382.0">
       <children>
@@ -23,7 +23,7 @@
     </HBox>
   </bottom>
   <center>
-    <VBox fx:id="chatsPane" onMouseClicked="#refresh" prefHeight="200.0" prefWidth="100.0">
+    <VBox fx:id="chatsPane" prefHeight="200.0" prefWidth="100.0">
       <children>
         <Label opacity="1.0" prefHeight="37.0" prefWidth="363.0" style="-fx-background-radius: 0 20 20 0;&#10;-fx-background-color: lightgray" text="Hola!" textAlignment="LEFT" textFill="BLACK">
           <VBox.margin>

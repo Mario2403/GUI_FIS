@@ -1,18 +1,25 @@
 package sample;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import whatsUPM.Agenda;
 import whatsUPM.Mensaje;
+import whatsUPM.Perfil;
 import whatsUPM.Usuario;
+
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -22,6 +29,12 @@ public class Controller {
     public Controller() {
         this.usuario = new Usuario(1, "correo1", "contra1");
         this.usuario.init();
+
+        /*añadir un get data para que cada ve que el controller se instancia, se guarden los cambios realizados en la GUI,
+          se deberia elmiminar el método init (incluirlo ne el constructor de usuario) y, mediante elmétodo getData
+          sobreescribir los valores del usuario (La primera vez seran los mismos, un doble init).
+        */
+
     }
 
     private Usuario usuario;
@@ -103,25 +116,46 @@ public class Controller {
     @FXML
     ImageView fotoListaAgenda;
 
+    //AgendaCreate View
+
+    @FXML
+    Button bCrear;
+
+    @FXML
+    CheckBox ch1;
+
+    @FXML
+    CheckBox ch2;
+
+    @FXML
+    CheckBox ch3;
+
+    @FXML
+    CheckBox ch4;
+
+    @FXML
+    TextField nombreAgenda;
+
+
     void initialize() {
 
     }
 
     @FXML
-    void exit(){
+    void exit() {
         System.exit(0);
     }
 
     @FXML
     void changeToChatsList() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("chatsList.fxml"));
-        Stage stage =(Stage)bChats.getScene().getWindow();
+        Stage stage = (Stage) bChats.getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setResizable(false);
     }
 
     @FXML
-    void refreshList(){
+    void refreshList() {
         fotoLista.setImage(this.usuario.getAgendas().get(0).getContactos().get(0).getFoto());
         aliasLista.setText(this.usuario.getAgendas().get(0).getContactos().get(0).getAlias());
 
@@ -130,7 +164,7 @@ public class Controller {
     @FXML
     void changeToAgendas() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("agendasView.fxml"));
-        Stage stage =(Stage)bAgendas.getScene().getWindow();
+        Stage stage = (Stage) bAgendas.getScene().getWindow();
         stage.setScene(new Scene(root, 382, 458));
         stage.setResizable(false);
     }
@@ -138,13 +172,11 @@ public class Controller {
     @FXML
     void changeToPerfil() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("perfilView.fxml"));
-        Stage stage =(Stage)bPerfil.getScene().getWindow();
+        Stage stage = (Stage) bPerfil.getScene().getWindow();
         stage.setScene(new Scene(root, 502, 460));
         stage.setResizable(false);
-
-
-
     }
+
     @FXML
     private void showPerfil() {
         alias.setText(this.usuario.getPerfil().getAlias());
@@ -156,7 +188,7 @@ public class Controller {
     @FXML
     void showAboutUs() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("AboutUs.fxml"));
-        Stage stage =(Stage)bVolver.getScene().getWindow();
+        Stage stage = (Stage) bVolver.getScene().getWindow();
         stage.setScene(new Scene(root, 634, 339));
         stage.setResizable(false);
     }
@@ -164,7 +196,7 @@ public class Controller {
     @FXML
     void changeToPrincipal() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        Stage stage =(Stage)bVolver.getScene().getWindow();
+        Stage stage = (Stage) bVolver.getScene().getWindow();
         stage.setScene(new Scene(root, 556, 345));
         stage.setResizable(false);
     }
@@ -181,11 +213,12 @@ public class Controller {
     @FXML
     void changeToChatsListFromSingleChat() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("chatsList.fxml"));
-        Stage stage =(Stage)bVolver.getScene().getWindow();
+        Stage stage = (Stage) bVolver.getScene().getWindow();
         stage.setScene(new Scene(root, 439, 597));
         stage.setResizable(false);
 
     }
+
     @FXML
     void refresh() {
 
@@ -206,47 +239,53 @@ public class Controller {
             label.setPrefSize(363, 37);
 
 
+            for (int i = 0; i < size; i++) {                        //Confirmamos que no se haya mostrado ya
+                Label l = (Label) chatsPane.getChildren().get(i);
 
-            for (int i = 0; i <size ; i++) {                        //Confirmamos que no se haya mostrado ya
-                Label l =(Label)chatsPane.getChildren().get(i);
-
-                if (l.getText().equalsIgnoreCase(label.getText())){
-                    alreadyInto= true;
+                if (l.getText().equalsIgnoreCase(label.getText())) {
+                    alreadyInto = true;
                 }
             }
+            chatsPane.setMargin(label, new Insets(0, 0, 5, 0));
 
-        if (!alreadyInto)chatsPane.getChildren().add(label);        //Añadimos el mensaje a la conversación
-
+            if (!alreadyInto) chatsPane.getChildren().add(label);        //Añadimos el mensaje a la conversación
 
 
         }
     }
+
     @FXML
-    void sendMessage(){
+    void sendMessage() {
 
 
         String texto = sentText.getText();
-    if(!texto.equalsIgnoreCase("")) {                             //Si el mensaje no está vacio...
-        Mensaje mensaje = new Mensaje(texto, this.usuario.getIdUsuario());   //Nuevo mensaje
-        this.usuario.getChats().get(0).getMensajes().add(mensaje);           //Lo añadimos al chat
-        Label label = new Label(texto);                                      //Lo creamos "gráficamente"
-        label.setStyle(sentMessage.getStyle());
-        label.setAlignment(sentMessage.getAlignment());
-        label.setPrefSize(363, 37);
-        chatsPane.getChildren().add(label);                                   //Lo añadimos al resto de la conversación
-}
+        if (!texto.equalsIgnoreCase("")) {                             //Si el mensaje no está vacio...
+            Mensaje mensaje = new Mensaje(texto, this.usuario.getIdUsuario());   //Nuevo mensaje
+            this.usuario.getChats().get(0).getMensajes().add(mensaje);           //Lo añadimos al chat
+            Label label = new Label(texto);                                      //Lo creamos "gráficamente"
+            label.setStyle(sentMessage.getStyle());
+            label.setAlignment(sentMessage.getAlignment());
+            label.setPrefSize(363, 37);
+            label.setPadding(new Insets(5, 5, 5, 5));
+            chatsPane.setMargin(label, new Insets(0, 0, 5, 0));
+
+            chatsPane.getChildren().add(label);                                   //Lo añadimos al resto de la conversación
+        }
+
+
     }
 
     @FXML
     void showAllContacts() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("contactList.fxml"));
-        Stage stage =(Stage)bVolver.getScene().getWindow();
+        Stage stage = (Stage) bVolver.getScene().getWindow();
         stage.setScene(new Scene(root, 350, 492));
         stage.setResizable(false);
 
     }
+
     @FXML
-    void refreshAgendaList(){
+    void refreshAgendaList() {
         fotoListaAgenda.setImage(this.usuario.getAgendas().get(0).getContactos().get(0).getFoto());
         aliasListaAgenda.setText(this.usuario.getAgendas().get(0).getContactos().get(0).getAlias());
     }
@@ -254,9 +293,26 @@ public class Controller {
     @FXML
     void showAddContacts() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("addContactView.fxml"));
-        Stage stage =(Stage)bVolver.getScene().getWindow();
+        Stage stage = (Stage) bVolver.getScene().getWindow();
         stage.setScene(new Scene(root, 350, 492));
         stage.setResizable(false);
+
+    }
+
+    @FXML
+    void crearAgenda(){
+        ArrayList<Perfil> contactos = new ArrayList<>();
+        if(ch1.isSelected()) contactos.add(this.usuario.getAgendas().get(0).getContactos().get(0));
+        if(ch2.isSelected()) contactos.add(this.usuario.getAgendas().get(0).getContactos().get(1));
+        if(ch3.isSelected()) contactos.add(this.usuario.getAgendas().get(0).getContactos().get(2));
+        if(ch4.isSelected()) contactos.add(this.usuario.getAgendas().get(0).getContactos().get(3));
+
+
+        Agenda nuevaAgenda = new Agenda(contactos, nombreAgenda.getText(),1);
+        this.usuario.getAgendas().add(nuevaAgenda);
+
+        System.out.println(this.usuario.getAgendas());
+
 
     }
 

@@ -13,7 +13,7 @@
   <bottom>
     <HBox alignment="CENTER_RIGHT" prefHeight="37.999900000002526" prefWidth="350.0" spacing="10.0">
       <children>
-        <Button id="bVolver" alignment="CENTER" contentDisplay="CENTER" defaultButton="false" mnemonicParsing="false" prefHeight="35.0" prefWidth="91.0" text="Crear" underline="false" wrapText="false">
+        <Button id="bVolver" fx:id="bCrear" alignment="CENTER" contentDisplay="CENTER" defaultButton="false" mnemonicParsing="false" onAction="#crearAgenda" prefHeight="35.0" prefWidth="91.0" text="Crear" underline="false" wrapText="false">
           <font>
             <Font size="18.0" fx:id="x3" />
           </font>
@@ -40,7 +40,7 @@
                 <Font size="30.0" fx:id="x2" />
               </font>
             </Label>
-            <CheckBox alignment="CENTER" allowIndeterminate="false" graphicTextGap="4.0" indeterminate="false" minHeight="13.999908447265625" mnemonicParsing="false" prefHeight="71.0" prefWidth="49.0" scaleX="2.0" scaleY="2.0" scaleZ="2.0" selected="false" text="" />
+            <CheckBox fx:id="ch1" alignment="CENTER" allowIndeterminate="false" graphicTextGap="4.0" indeterminate="false" minHeight="13.999908447265625" mnemonicParsing="false" prefHeight="71.0" prefWidth="49.0" scaleX="2.0" scaleY="2.0" scaleZ="2.0" selected="false" text="" />
           </children>
         </HBox>
         <HBox minHeight="81.0" prefHeight="81.0" prefWidth="350.0" spacing="15.0">
@@ -51,24 +51,7 @@
               </image>
             </ImageView>
             <Label font="$x2" prefHeight="76.0" prefWidth="204.0" text="Usuario1" />
-            <CheckBox alignment="CENTER" allowIndeterminate="false" graphicTextGap="4.0" indeterminate="false" minHeight="13.999908447265625" mnemonicParsing="false" prefHeight="71.0" prefWidth="49.0" scaleX="2.0" scaleY="2.0" scaleZ="2.0" selected="false" text="" />
-          </children>
-          <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
-          </padding>
-          <VBox.margin>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
-          </VBox.margin>
-        </HBox>
-        <HBox minHeight="81.0" prefHeight="81.0" prefWidth="350.0" spacing="15.0">
-          <children>
-            <ImageView fitHeight="81.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="file:/E:/GITHUB/GUI%20FIS/src/data/user.png" />
-              </image>
-            </ImageView>
-            <Label font="$x2" prefHeight="76.0" prefWidth="204.0" text="Usuario1" />
-            <CheckBox alignment="CENTER" allowIndeterminate="false" graphicTextGap="4.0" indeterminate="false" minHeight="13.999908447265625" mnemonicParsing="false" prefHeight="71.0" prefWidth="49.0" scaleX="2.0" scaleY="2.0" scaleZ="2.0" selected="false" text="" />
+            <CheckBox fx:id="ch2" alignment="CENTER" allowIndeterminate="false" graphicTextGap="4.0" indeterminate="false" minHeight="13.999908447265625" mnemonicParsing="false" prefHeight="71.0" prefWidth="49.0" scaleX="2.0" scaleY="2.0" scaleZ="2.0" selected="false" text="" />
           </children>
           <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
@@ -85,7 +68,24 @@
               </image>
             </ImageView>
             <Label font="$x2" prefHeight="76.0" prefWidth="204.0" text="Usuario1" />
-            <CheckBox alignment="CENTER" allowIndeterminate="false" graphicTextGap="4.0" indeterminate="false" minHeight="13.999908447265625" mnemonicParsing="false" prefHeight="71.0" prefWidth="49.0" scaleX="2.0" scaleY="2.0" scaleZ="2.0" selected="false" text="" />
+            <CheckBox fx:id="ch3" alignment="CENTER" allowIndeterminate="false" graphicTextGap="4.0" indeterminate="false" minHeight="13.999908447265625" mnemonicParsing="false" prefHeight="71.0" prefWidth="49.0" scaleX="2.0" scaleY="2.0" scaleZ="2.0" selected="false" text="" />
+          </children>
+          <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+          </padding>
+          <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+          </VBox.margin>
+        </HBox>
+        <HBox minHeight="81.0" prefHeight="81.0" prefWidth="350.0" spacing="15.0">
+          <children>
+            <ImageView fitHeight="81.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="file:/E:/GITHUB/GUI%20FIS/src/data/user.png" />
+              </image>
+            </ImageView>
+            <Label font="$x2" prefHeight="76.0" prefWidth="204.0" text="Usuario1" />
+            <CheckBox fx:id="ch4" alignment="CENTER" allowIndeterminate="false" graphicTextGap="4.0" indeterminate="false" minHeight="13.999908447265625" mnemonicParsing="false" prefHeight="71.0" prefWidth="49.0" scaleX="2.0" scaleY="2.0" scaleZ="2.0" selected="false" text="" />
           </children>
           <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
@@ -97,7 +97,7 @@
         <HBox alignment="CENTER_LEFT" minHeight="50.5" prefHeight="50.5" prefWidth="350.0" spacing="15.0">
           <children>
             <Label font="$x3" prefHeight="24.0" prefWidth="81.0" text="Nombre:" />
-            <TextField prefHeight="35.0" prefWidth="247.0" />
+            <TextField fx:id="nombreAgenda" prefHeight="35.0" prefWidth="247.0" />
           </children>
           <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
