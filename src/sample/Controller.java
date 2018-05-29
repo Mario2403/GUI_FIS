@@ -18,9 +18,15 @@ import whatsUPM.Mensaje;
 import whatsUPM.Perfil;
 import whatsUPM.Usuario;
 
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.Array;
 import java.net.URL;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -303,6 +309,8 @@ public class Controller {
     void sendMessage() {
 
 
+
+
         String texto = sentText.getText();
         if (!texto.equalsIgnoreCase("")) {                             //Si el mensaje no está vacio...
             Mensaje mensaje = new Mensaje(texto, this.usuario.getIdUsuario());   //Nuevo mensaje
@@ -315,6 +323,20 @@ public class Controller {
             chatsPane.setMargin(label, new Insets(0, 0, 5, 0));
 
             chatsPane.getChildren().add(label);                                   //Lo añadimos al resto de la conversación
+
+            /*If writting to a file*/
+
+
+            //Modify the text string
+            texto=this.usuario.getIdUsuario().toString() + texto;
+
+            //Write process
+
+            try {
+                Files.write(Paths.get("C:/ChatsWhatsUPM/chat0.txt"), texto.getBytes(), StandardOpenOption.APPEND);
+            }catch (IOException e) {
+                //exception handling left as an exercise for the reader
+            }
         }
 
 
