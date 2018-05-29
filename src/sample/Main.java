@@ -6,14 +6,23 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import whatsUPM.Usuario;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
 
+        Usuario usuario = new Usuario(1, "correo1", "contra1");
+        usuario.init();
 
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+        Parent root =loader.load();
+        Controller controller = loader.<Controller>getController();
+        controller.setUsuario(usuario);
+
+
+        //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("whatsUPM");
         primaryStage.getIcons().add(new Image("data/AppLogoTransparent.png"));
         primaryStage.setScene(new Scene(root, 556, 345));

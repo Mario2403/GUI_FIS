@@ -141,4 +141,8 @@ public class Usuario implements InterfazUsuario {
     public void verChats() {
 
     }
+
+    public void getData() {
+
+    }
 }

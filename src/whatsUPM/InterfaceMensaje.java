@@ -13,6 +13,7 @@
 package whatsUPM;
 
 public interface InterfaceMensaje {
+
 	public void marcarComoRecibido();
 
     public void marcarComoLeido();

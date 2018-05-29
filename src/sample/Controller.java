@@ -25,19 +25,25 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class Controller {
+    private Usuario usuario;
 
     public Controller() {
-        this.usuario = new Usuario(1, "correo1", "contra1");
-        this.usuario.init();
+        //this.usuario = new Usuario(1, "correo1", "contra1");
+        //this.usuario.init();
+        //this.usuario.getData();
 
-        /*añadir un get data para que cada ve que el controller se instancia, se guarden los cambios realizados en la GUI,
-          se deberia elmiminar el método init (incluirlo ne el constructor de usuario) y, mediante elmétodo getData
+        /*añadir un get data para que cada vez que el controller se instancia, se guarden los cambios realizados en la GUI,
+          se deberia elmiminar el método init (incluirlo en el constructor de usuario) y, mediante el método getData
           sobreescribir los valores del usuario (La primera vez seran los mismos, un doble init).
         */
 
     }
 
-    private Usuario usuario;
+    void setUsuario(Usuario usuario){
+        this.usuario=usuario;
+    }
+
+
 
     @FXML
     private ResourceBundle resources;
@@ -148,7 +154,12 @@ public class Controller {
 
     @FXML
     void changeToChatsList() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("chatsList.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("chatsList.fxml"));
+        Parent root =loader.load();
+        Controller controller = loader.<Controller>getController();
+        controller.setUsuario(usuario);
+
+        //Parent root = FXMLLoader.load(getClass().getResource("chatsList.fxml"));
         Stage stage = (Stage) bChats.getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setResizable(false);
@@ -163,7 +174,13 @@ public class Controller {
 
     @FXML
     void changeToAgendas() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("agendasView.fxml"));
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("agendasView.fxml"));
+        Parent root =loader.load();
+        Controller controller = loader.<Controller>getController();
+        controller.setUsuario(usuario);
+
+        //Parent root = FXMLLoader.load(getClass().getResource("agendasView.fxml"));
         Stage stage = (Stage) bAgendas.getScene().getWindow();
         stage.setScene(new Scene(root, 382, 458));
         stage.setResizable(false);
@@ -171,7 +188,15 @@ public class Controller {
 
     @FXML
     void changeToPerfil() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("perfilView.fxml"));
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("perfilView.fxml"));
+        Parent root =loader.load();
+        Controller controller = loader.<Controller>getController();
+        controller.setUsuario(usuario);
+
+
+
+        //Parent root = FXMLLoader.load(getClass().getResource("perfilView.fxml"));
         Stage stage = (Stage) bPerfil.getScene().getWindow();
         stage.setScene(new Scene(root, 502, 460));
         stage.setResizable(false);
@@ -187,7 +212,12 @@ public class Controller {
 
     @FXML
     void showAboutUs() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("AboutUs.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("AboutUs.fxml"));
+        Parent root =loader.load();
+        Controller controller = loader.<Controller>getController();
+        controller.setUsuario(usuario);
+
+        //Parent root = FXMLLoader.load(getClass().getResource("AboutUs.fxml"));
         Stage stage = (Stage) bVolver.getScene().getWindow();
         stage.setScene(new Scene(root, 634, 339));
         stage.setResizable(false);
@@ -195,7 +225,12 @@ public class Controller {
 
     @FXML
     void changeToPrincipal() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+        Parent root =loader.load();
+        Controller controller = loader.<Controller>getController();
+        controller.setUsuario(usuario);
+
+        //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Stage stage = (Stage) bVolver.getScene().getWindow();
         stage.setScene(new Scene(root, 556, 345));
         stage.setResizable(false);
@@ -203,7 +238,12 @@ public class Controller {
 
     @FXML
     void changeToSingleChat() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("chatsView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("chatsView.fxml"));
+        Parent root =loader.load();
+        Controller controller = loader.<Controller>getController();
+        controller.setUsuario(usuario);
+
+        //Parent root = FXMLLoader.load(getClass().getResource("chatsView.fxml"));
         Stage stage = (Stage) bVolver.getScene().getWindow();
         stage.setScene(new Scene(root, 382, 458));
         stage.setResizable(false);
@@ -212,7 +252,12 @@ public class Controller {
 
     @FXML
     void changeToChatsListFromSingleChat() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("chatsList.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("chatsList.fxml"));
+        Parent root =loader.load();
+        Controller controller = loader.<Controller>getController();
+        controller.setUsuario(usuario);
+
+        //Parent root = FXMLLoader.load(getClass().getResource("chatsList.fxml"));
         Stage stage = (Stage) bVolver.getScene().getWindow();
         stage.setScene(new Scene(root, 439, 597));
         stage.setResizable(false);
@@ -277,7 +322,12 @@ public class Controller {
 
     @FXML
     void showAllContacts() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("contactList.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("contactList.fxml"));
+        Parent root =loader.load();
+        Controller controller = loader.<Controller>getController();
+        controller.setUsuario(usuario);
+
+        //Parent root = FXMLLoader.load(getClass().getResource("contactList.fxml"));
         Stage stage = (Stage) bVolver.getScene().getWindow();
         stage.setScene(new Scene(root, 350, 492));
         stage.setResizable(false);
@@ -292,7 +342,12 @@ public class Controller {
 
     @FXML
     void showAddContacts() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("addContactView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("addContactView.fxml"));
+        Parent root =loader.load();
+        Controller controller = loader.<Controller>getController();
+        controller.setUsuario(usuario);
+
+        //Parent root = FXMLLoader.load(getClass().getResource("addContactView.fxml"));
         Stage stage = (Stage) bVolver.getScene().getWindow();
         stage.setScene(new Scene(root, 350, 492));
         stage.setResizable(false);

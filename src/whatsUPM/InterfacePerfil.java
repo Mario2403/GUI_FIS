@@ -13,6 +13,7 @@ package whatsUPM;
 
 
 public interface InterfacePerfil {
+
 	public void modificarPerfil();
 
     public void visualizarPerfil();

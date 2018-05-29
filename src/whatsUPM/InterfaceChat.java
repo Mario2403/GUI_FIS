@@ -13,6 +13,7 @@ package whatsUPM;
 
 
 public interface InterfaceChat {
+
 	public void enviarMensaje(Mensaje mensaje);
 
     public void listarMensajes();

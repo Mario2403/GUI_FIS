@@ -13,6 +13,7 @@ package whatsUPM;
 
 
 public interface InterfazAgenda {
+
 	public void crearAgenda();
 
     public void marcarComoFavorito();
