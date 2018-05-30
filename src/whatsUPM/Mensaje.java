@@ -20,12 +20,18 @@ public class Mensaje implements InterfaceMensaje {
 	private Date fecha;
 	private Boolean esRecibido;
 	private Boolean esVisto;
+	private String aliasOrigen;
 
 	public  Mensaje(String texto, Integer usuarioOrigen) {
 	    this.texto=texto;
 	    this.usuarioOrigen=usuarioOrigen;
 	
 	}
+
+    public Mensaje(String mensaje, String aliasOrigen) {
+	    this.aliasOrigen=aliasOrigen;
+	    this.texto=mensaje;
+    }
 
     public String getTexto() {
         return texto;

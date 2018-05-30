@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GUI FIS.iml" filepath="$PROJECT_DIR$/GUI FIS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GUI_FIS.iml" filepath="$PROJECT_DIR$/GUI_FIS.iml" />
     </modules>
   </component>
 </project>

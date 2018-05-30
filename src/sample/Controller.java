@@ -24,6 +24,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -174,6 +175,7 @@ public class Controller {
         fotoLista.setImage(this.usuario.getAgendas().get(0).getContactos().get(0).getFoto());
         aliasLista.setText(this.usuario.getAgendas().get(0).getContactos().get(0).getAlias());
 
+
     }
 
     @FXML
@@ -273,9 +275,22 @@ public class Controller {
 
         fotoOtroPerfil.setImage(this.usuario.getAgendas().get(0).getContactos().get(0).getFoto());
         aliasOtroPerfil.setText(this.usuario.getAgendas().get(0).getContactos().get(0).getAlias());
+        ArrayList<Mensaje> s = new ArrayList<>();
 
+        try {
+            ArrayList<String> mensajes= AccesoABD.recibirMensajes(AccesoABD.obtenerChat(this.usuario.getAgendas().get(0).getContactos().get(0).getAlias(),this.usuario.getPerfil().getAlias()));
+            for (String mensajesBD : mensajes
+                 ) {
+                s.add(new Mensaje(mensajesBD,this.usuario.getPerfil().getAlias()));
+                System.out.println(mensajesBD);
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        this.usuario.getChats().get(0).setMensajes(s);
 
         ArrayList<Mensaje> mensajes = this.usuario.getChats().get(0).getMensajes();
+        System.out.println(this.usuario.getChats().get(0).getMensajes());
 
         int size = chatsPane.getChildren().size();
         boolean alreadyInto = false;
@@ -368,6 +383,20 @@ public class Controller {
     void refreshAgendaList() {
         fotoListaAgenda.setImage(this.usuario.getAgendas().get(0).getContactos().get(0).getFoto());
         aliasListaAgenda.setText(this.usuario.getAgendas().get(0).getContactos().get(0).getAlias());
+        try {
+            ArrayList<String> usuarios = AccesoABD.recibirUsuarios(this.usuario.getPerfil().getAlias());
+            ArrayList<Perfil> perfiles = new ArrayList<>();
+            for (String s: usuarios) {
+
+                Perfil p = new Perfil(s);
+                perfiles.add(p);
+                //this.usuario.getAgendas().get(0).getContactos().add(new Perfil(s));
+            }
+            this.usuario.getAgendas().get(0).setContactos(perfiles);
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        System.out.println(this.usuario.getAgendas().get(0).getContactos().size());
     }
 
     @FXML
