@@ -25,7 +25,7 @@
   <center>
     <VBox fx:id="chatsPane" prefHeight="200.0" prefWidth="100.0">
       <children>
-        <Label opacity="1.0" prefHeight="37.0" prefWidth="363.0" style="-fx-background-radius: 0 20 20 0;&#10;-fx-background-color: lightgray" text="Hola!" textAlignment="LEFT" textFill="BLACK">
+        <Label fx:id="otherMessage" opacity="1.0" prefHeight="37.0" prefWidth="363.0" style="-fx-background-radius: 0 20 20 0;&#10;-fx-background-color: lightgray" text="Hola!" textAlignment="LEFT" textFill="BLACK">
           <VBox.margin>
             <Insets bottom="5.0" fx:id="x3" />
           </VBox.margin>

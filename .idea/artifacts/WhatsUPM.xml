@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="WhatsUPM">
+    <output-path>$PROJECT_DIR$/out/artifacts/WhatsUPM</output-path>
+    <root id="archive" name="WhatsUPM.jar" />
+  </artifact>
+</component>

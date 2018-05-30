@@ -27,6 +27,7 @@ import java.nio.file.StandardOpenOption;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller {
@@ -84,6 +85,9 @@ public class Controller {
 
     @FXML
     Label sentMessage;
+
+    @FXML
+    Label otherMessage;
 
     @FXML
     ImageView fotoOtroPerfil;
@@ -275,6 +279,7 @@ public class Controller {
 
         fotoOtroPerfil.setImage(this.usuario.getAgendas().get(0).getContactos().get(0).getFoto());
         aliasOtroPerfil.setText(this.usuario.getAgendas().get(0).getContactos().get(0).getAlias());
+        /*
         ArrayList<Mensaje> s = new ArrayList<>();
 
         try {
@@ -286,23 +291,45 @@ public class Controller {
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
-        }
-        this.usuario.getChats().get(0).setMensajes(s);
+            }
+        */
+        //this.usuario.getChats().get(0).setMensajes(s);
+
 
         ArrayList<Mensaje> mensajes = this.usuario.getChats().get(0).getMensajes();
-        System.out.println(this.usuario.getChats().get(0).getMensajes());
 
-        int size = chatsPane.getChildren().size();
+        try {
+            List<String> p=Files.readAllLines(Paths.get("C:/ChatsWhatsUPM/chat0.txt"), Charset.defaultCharset());
+            for (String eLista: p) {
+                String eidUser = eLista.substring(0,1);
+                String eTexto = eLista.substring(2);
+                mensajes.add(new Mensaje(eTexto, Integer.parseInt(eidUser)));
+
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
         boolean alreadyInto = false;
         for (Mensaje mensaje : mensajes) {
 
-
             Label label = new Label(mensaje.getTexto());        //Creamos el mensaje "gráficamente"
-            label.setStyle(sentMessage.getStyle());
-            label.setAlignment(sentMessage.getAlignment());
-            label.setPrefSize(363, 37);
+            if(mensaje.getUsuarioOrigen()==1) {
 
+                label.setStyle(sentMessage.getStyle());
+                label.setAlignment(sentMessage.getAlignment());
+                label.setPrefSize(363, 37);
+            }
+            else{
 
+                label.setStyle(otherMessage.getStyle());
+                label.setAlignment(otherMessage.getAlignment());
+                label.setPrefSize(363, 37);
+
+            }
+
+            int size = chatsPane.getChildren().size();
             for (int i = 0; i < size; i++) {                        //Confirmamos que no se haya mostrado ya
                 Label l = (Label) chatsPane.getChildren().get(i);
 
@@ -337,23 +364,27 @@ public class Controller {
 
             chatsPane.getChildren().add(label);                                   //Lo añadimos al resto de la conversación
 
-
+/*
             try {
                 AccesoABD.mandarMensaje(texto, AccesoABD.obtenerChat(this.usuario.getPerfil().getAlias(), this.usuario.getAgendas().get(0).getContactos().get(0).getAlias()));
             } catch (SQLException | ClassNotFoundException e) {
                 e.printStackTrace();
             }
+            */
 
             /*If writting to a file*/
 
 
             //Modify the text string
-            texto=this.usuario.getIdUsuario().toString() + texto;
+            texto=this.usuario.getIdUsuario().toString()+ "|" + texto + "\n";
+
 
             //Write process
 
             try {
                 Files.write(Paths.get("C:/ChatsWhatsUPM/chat0.txt"), texto.getBytes(), StandardOpenOption.APPEND);
+
+
             }catch (IOException e) {
             }
         }
