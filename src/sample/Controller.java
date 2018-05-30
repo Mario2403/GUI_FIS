@@ -13,10 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import whatsUPM.Agenda;
-import whatsUPM.Mensaje;
-import whatsUPM.Perfil;
-import whatsUPM.Usuario;
+import whatsUPM.*;
 
 import java.io.*;
 import java.lang.reflect.Array;
@@ -27,6 +24,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -324,6 +322,13 @@ public class Controller {
 
             chatsPane.getChildren().add(label);                                   //Lo añadimos al resto de la conversación
 
+
+            try {
+                AccesoABD.mandarMensaje(texto, AccesoABD.obtenerChat(this.usuario.getPerfil().getAlias(), this.usuario.getAgendas().get(0).getContactos().get(0).getAlias()));
+            } catch (SQLException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+
             /*If writting to a file*/
 
 
@@ -338,6 +343,9 @@ public class Controller {
                 //exception handling left as an exercise for the reader
             }
         }
+
+        /*If storing to a database*/
+
 
 
     }

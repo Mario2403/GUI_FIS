@@ -28,7 +28,7 @@ public class Usuario implements InterfazUsuario {
     private ChatFactoryMethod chatFactory;
 
 
-    public Usuario(Integer idUsuario, String correo, String contrasena) {
+    public Usuario(Integer idUsuario,  String correo, String contrasena) {
         this.idUsuario = idUsuario;
         this.correo = correo;
         this.contrasena = contrasena;
@@ -63,6 +63,14 @@ public class Usuario implements InterfazUsuario {
         this.getPerfil().setDescripcion("Hola, soy Jacinto, ¡un apasionado por las motos y la velocidad!");
 
 
+    }
+
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public void setContrasena(String contrasena) {
