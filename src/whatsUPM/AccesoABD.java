@@ -6,11 +6,11 @@ import java.util.List;
 
 public final class AccesoABD {
 
-    private  static final String user = "Asier";
-    private  static final String userPass = "AsierAC";
+    //private  static final String user = "Asier";
+    //private  static final String userPass = "AsierAC";
 
-    //private  static final String user = "Mario";
-    //private  static final String userPass = "MarioJS";
+    private  static final String user = "Mario";
+    private  static final String userPass = "MarioJS";
 
     private  static final String urlBD = "jdbc:mysql://127.0.0.1:8889/WhatsUPM?useLegacyDatetimeCode=false&amp&&serverTimezone=UTC";
     private static Connection conexionBD = null;
@@ -42,13 +42,13 @@ public final class AccesoABD {
         return correcto; //True-->El mensaje se ha enviado correctamente False--> No creo que aparezca, antes peta una excepcion.
     }
 
-    public static ArrayList<String> recibirUsuarios () throws SQLException, ClassNotFoundException { //Para la agenda
+    public static ArrayList<String> recibirUsuarios (String usuario) throws SQLException, ClassNotFoundException { //Para la agenda
         ArrayList<String> listaUsuarios = new ArrayList<>();
 
          conexionBD = obtenerConexionBD();
 
         Statement s = conexionBD.createStatement();
-        ResultSet rs = s.executeQuery("select nombre_usuario from Usuarios");
+        ResultSet rs = s.executeQuery("SELECT nombre_usuario FROM Usuarios WHERE nombre_usuario <> \""+ usuario +"\"");
 
         while (rs.next()){
             listaUsuarios.add(rs.getString(1));
@@ -84,25 +84,26 @@ public final class AccesoABD {
         return chat;
     }
 
-    public static ResultSet recibirMensajes (String chat) throws SQLException, ClassNotFoundException {
+    public static ArrayList<String> recibirMensajes (String chat) throws SQLException, ClassNotFoundException {
 
         //IMPORTANTE: Esta funcion no puede cerrar la conexion ya que si la cierra no se podrá acceder al ResultSet.
         //Despues de la llamada a esta función y del tratamiento del ResultSet se cerrará la conexion con getConexionBD
         //y con conexionBD.close();
          conexionBD = obtenerConexionBD();
 
-        String query = "select * from "+ chat +" where visto = false";
+        String query = "select * from "+ chat;
         Statement s = conexionBD.createStatement();
         ResultSet rs = s.executeQuery(query);
 
-        //Marcar como Vistos
+        ArrayList<String> mensajes = new ArrayList<>();
+        while (rs.next()){
+            mensajes.add(rs.getString(2));
+        }
 
-        query = "update " + chat + " set visto=1";
-        s.execute(query);
 
 
-
-        return rs;
+        conexionBD.close();
+        return mensajes;
     }
 
 }

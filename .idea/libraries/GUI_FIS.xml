@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="GUI_FIS">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/GUI_FIS/GUI_FIS.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

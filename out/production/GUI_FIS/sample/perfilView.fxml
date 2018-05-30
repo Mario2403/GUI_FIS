@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane onMouseEntered="#showPerfil" onMouseMoved="#showPerfil" prefHeight="460.0" prefWidth="502.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+  <bottom>
+    <HBox alignment="CENTER_RIGHT" minHeight="24.0" prefHeight="34.0" prefWidth="492.0">
+      <children>
+        <Button contentDisplay="LEFT" mnemonicParsing="false" onAction="#changeToPrincipal" prefHeight="34.0" prefWidth="71.0" text="Volver">
+          <font>
+            <Font size="16.0" fx:id="x1" />
+          </font>
+        </Button>
+      </children>
+      <BorderPane.margin>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      </BorderPane.margin>
+    </HBox>
+  </bottom>
+  <center>
+    <VBox prefHeight="437.0" prefWidth="483.0">
+      <children>
+        <ImageView fx:id="fotoPerfil" fitHeight="203.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" />
+        <Label fx:id="alias" alignment="CENTER" prefHeight="24.0" prefWidth="232.0" text="" textAlignment="CENTER" />
+        <Label fx:id="correo" alignment="CENTER" prefHeight="24.0" prefWidth="232.0" text="" textAlignment="CENTER" wrapText="true" />
+        <Label id="correo" fx:id="descripcion" alignment="CENTER" prefHeight="59.0" prefWidth="203.0" text="" textAlignment="CENTER" wrapText="true" />
+      </children>
+      <BorderPane.margin>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      </BorderPane.margin>
+    </VBox>
+  </center>
+  <left>
+    <Region prefHeight="436.0" prefWidth="150.0" />
+  </left>
+  <right>
+    <Button id="bSalir" fx:id="bVolver" alignment="CENTER" cancelButton="false" contentDisplay="TEXT_ONLY" defaultButton="false" disable="true" focusTraversable="false" font="$x1" graphicTextGap="4.0" minHeight="24.0" minWidth="25.999900000002526" mnemonicParsing="false" prefHeight="24.0" prefWidth="25.999900000002526" text="TROLL" textAlignment="CENTER" underline="false" visible="false" wrapText="true" />
+  </right>
+  <top>
+    <MenuBar>
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#exit" text="Close" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#showAboutUs" text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </top>
+</BorderPane>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="339.0000999999975" prefWidth="634.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+  <children>
+    <ImageView disable="true" fitHeight="179.90406898498534" fitWidth="294.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+      <image>
+        <Image url="@../data/Logo-ETSISI.png" />
+      </image>
+    </ImageView>
+    <Label layoutX="339.0" layoutY="184.0" prefHeight="21.28125" prefWidth="245.0" text="Asier Armenteros Cañibano">
+      <font>
+        <Font size="16.0" fx:id="x1" />
+      </font>
+    </Label>
+    <Label font="$x1" layoutX="317.0" layoutY="35.0" prefHeight="21.28125" prefWidth="288.0" text="Aplicación WhatsUPM para la asignatura" />
+    <Label font="$x1" layoutX="317.0" layoutY="52.0" prefHeight="21.28125" prefWidth="288.0" text="Fundamentos de Ingenieria del Software" />
+    <Label layoutX="339.0" layoutY="143.0" prefHeight="21.28125" prefWidth="288.0" text="Grupo GT22-8">
+      <font>
+        <Font size="20.0" fx:id="x2" />
+      </font>
+    </Label>
+    <Label font="$x1" layoutX="339.0" layoutY="207.0" prefHeight="21.28125" prefWidth="245.0" text="Adrián Fernández Tamayo" />
+    <Label font="$x1" layoutX="339.0" layoutY="228.0" prefHeight="21.28125" prefWidth="245.0" text="Daniel García Cebrián" />
+    <Label font="$x1" layoutX="339.0" layoutY="249.0" prefHeight="21.28125" prefWidth="245.0" text="Isaac Martínez Garrido" />
+    <Label font="$x1" layoutX="339.0" layoutY="294.0" prefHeight="21.28125" prefWidth="245.0" text="Mario Jurado Soba" />
+    <Label font="$x1" layoutX="339.0" layoutY="273.0" prefHeight="21.28125" prefWidth="245.0" text="Rubén Muro Gómez" />
+    <Label font="$x2" layoutX="29.0" layoutY="222.0" prefHeight="21.28125" prefWidth="288.0" text="Profesores" />
+    <Label font="$x1" layoutX="29.0" layoutY="262.0" prefHeight="21.28125" prefWidth="266.0" text="Fernando Naharro Berrocal (Teoría)" />
+    <Label font="$x1" layoutX="29.0" layoutY="283.0" prefHeight="21.28125" prefWidth="266.0" text="Bernardo Tabuenca Archilla (Práctica)" />
+    <Button fx:id="bVolver" layoutX="554.0" layoutY="293.0" mnemonicParsing="false" onAction="#changeToPrincipal" prefHeight="26.6015625" prefWidth="60.0" text="Volver" />
+  </children>
+</Pane>

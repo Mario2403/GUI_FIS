@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="491.0" prefWidth="385.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+  <bottom>
+    <HBox prefHeight="31.0" prefWidth="385.0">
+      <children>
+        <Button mnemonicParsing="false" onAction="#showAddContacts" prefHeight="31.0" prefWidth="83.0" text="Nueva">
+          <font>
+            <Font size="16.0" fx:id="x1" />
+          </font>
+        </Button>
+        <Region prefHeight="31.0" prefWidth="224.0" />
+        <Button fx:id="bVolver" font="$x1" mnemonicParsing="false" onAction="#changeToPrincipal" prefHeight="31.0" prefWidth="76.0" text="Volver" />
+      </children>
+      <BorderPane.margin>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x2" />
+      </BorderPane.margin>
+    </HBox>
+  </bottom>
+  <center>
+    <VBox prefHeight="200.0" prefWidth="100.0">
+      <children>
+        <Label labelFor="$bVolver" onMouseClicked="#showAllContacts" prefHeight="51.0" prefWidth="385.0" style="-fx-border-style: solid;&#10;-fx-border-color: black;&#10;-fx-border-radius: 10px;&#10;" text=" Amigos" VBox.margin="$x2">
+          <font>
+            <Font size="30.0" fx:id="x3" />
+          </font>
+        </Label>
+        <Label font="$x3" prefHeight="51.0" prefWidth="385.0" style="-fx-border-style: solid;&#10;-fx-border-color: black;&#10;-fx-border-radius: 10px;" text=" Familia" VBox.margin="$x2" />
+        <Label font="$x3" prefHeight="51.0" prefWidth="385.0" style="-fx-border-style: solid;&#10;-fx-border-color: black;&#10;-fx-border-radius: 10px;" text=" Compañeros del trabajo" VBox.margin="$x2" />
+      </children>
+      <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x2" />
+      </padding>
+      <BorderPane.margin>
+        <Insets bottom="5.0" right="5.0" top="5.0" />
+      </BorderPane.margin>
+    </VBox>
+  </center>
+  <top>
+    <MenuBar>
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#exit" text="Close" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#showAboutUs" text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </top>
+</BorderPane>
