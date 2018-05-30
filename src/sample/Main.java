@@ -13,7 +13,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        Usuario usuario = new Usuario(1, "correo1", "contra1");
+        Usuario usuario = new Usuario(1, "correo1@alumnos.upm.es", "contra1");
         usuario.init();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));

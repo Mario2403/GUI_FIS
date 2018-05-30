@@ -44,7 +44,7 @@ public class Usuario implements InterfazUsuario {
 
         ArrayList<Perfil> integrantes = new ArrayList<>();
 
-        Perfil perfil = new Perfil("Asier Armenteros");
+        Perfil perfil = new Perfil("Mario Jurado");
         integrantes.add(perfil);
         perfil.setFoto(new Image("data/OtherUser.png"));
         perfil.setDescripcion("Mecánico a tiempo completo");
@@ -58,7 +58,7 @@ public class Usuario implements InterfazUsuario {
         mensajes.add(new Mensaje("Respondemeee!", this.idUsuario));
         this.getChats().get(0).setMensajes(mensajes);
 
-        this.setPerfil(new Perfil("Mario Jurado"));
+        this.setPerfil(new Perfil("Asier Armenteros"));
         this.getPerfil().setFoto(new Image("data/mainUser.jpg"));
         this.getPerfil().setDescripcion("Hola, soy Jacinto, ¡un apasionado por las motos y la velocidad!");
 

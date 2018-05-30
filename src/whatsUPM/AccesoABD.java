@@ -6,11 +6,11 @@ import java.util.List;
 
 public final class AccesoABD {
 
-    private  static final String user = "Asier";
-    private  static final String userPass = "AsierAC";
+    //private  static final String user = "Asier";
+    //private  static final String userPass = "AsierAC";
 
-    //private  static final String user = "Mario";
-    //private  static final String userPass = "MarioJS";
+    private  static final String user = "Mario";
+    private  static final String userPass = "MarioJS";
 
     private  static final String urlBD = "jdbc:mysql://127.0.0.1:8889/WhatsUPM?useLegacyDatetimeCode=false&amp&&serverTimezone=UTC";
     private static Connection conexionBD = null;

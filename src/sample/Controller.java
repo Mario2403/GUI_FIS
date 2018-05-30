@@ -355,7 +355,6 @@ public class Controller {
             try {
                 Files.write(Paths.get("C:/ChatsWhatsUPM/chat0.txt"), texto.getBytes(), StandardOpenOption.APPEND);
             }catch (IOException e) {
-                //exception handling left as an exercise for the reader
             }
         }
 
