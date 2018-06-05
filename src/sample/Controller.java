@@ -49,7 +49,9 @@ public class Controller {
         this.usuario=usuario;
     }
 
-
+    public Usuario getUsuario() {
+        return usuario;
+    }
 
     @FXML
     private ResourceBundle resources;
