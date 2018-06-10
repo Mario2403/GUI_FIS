@@ -12,7 +12,7 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-background-color 0xdfdfdfff?>
 
-<BorderPane disable="false" maxHeight="354.0" maxWidth="556.0" minHeight="354.0" minWidth="556.0" mouseTransparent="false" pickOnBounds="false" prefHeight="354.0" prefWidth="556.0" snapToPixel="true" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+<BorderPane disable="false" maxHeight="354.0" maxWidth="556.0" minHeight="354.0" minWidth="556.0" mouseTransparent="false" pickOnBounds="false" prefHeight="354.0" prefWidth="556.0" snapToPixel="true" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Main.Controller">
   <bottom>
     <Pane prefHeight="56.0" prefWidth="556.0">
       <children>

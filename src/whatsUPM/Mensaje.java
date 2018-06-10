@@ -12,19 +12,21 @@
 package whatsUPM;
 
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Mensaje implements InterfaceMensaje {
 	private String texto;
 	private Integer usuarioOrigen;
 	private Date fecha;
-	private Boolean esRecibido;
-	private Boolean esVisto;
+	private Boolean esRecibido = false;
+	private Boolean esVisto = false;
 	private String aliasOrigen;
 
 	public  Mensaje(String texto, Integer usuarioOrigen) {
 	    this.texto=texto;
 	    this.usuarioOrigen=usuarioOrigen;
+
 	
 	}
 

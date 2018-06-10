@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane prefHeight="339.0000999999975" prefWidth="634.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+<Pane prefHeight="339.0000999999975" prefWidth="634.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Main.Controller">
   <children>
     <ImageView disable="true" fitHeight="179.90406898498534" fitWidth="294.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" smooth="false">
       <image>

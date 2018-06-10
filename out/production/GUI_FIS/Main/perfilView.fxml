@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane onMouseEntered="#showPerfil" onMouseMoved="#showPerfil" prefHeight="460.0" prefWidth="502.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+<BorderPane onMouseEntered="#showPerfil" onMouseMoved="#showPerfil" prefHeight="460.0" prefWidth="502.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Main.Controller">
   <bottom>
     <HBox alignment="CENTER_RIGHT" minHeight="24.0" prefHeight="34.0" prefWidth="492.0">
       <children>

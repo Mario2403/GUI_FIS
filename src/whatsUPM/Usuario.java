@@ -60,7 +60,7 @@ public class Usuario implements InterfazUsuario {
 
         this.setPerfil(new Perfil("Asier Armenteros"));
         this.getPerfil().setFoto(new Image("data/mainUser.jpg"));
-        this.getPerfil().setDescripcion("Hola, soy Jacinto, ¡un apasionado por las motos y la velocidad!");
+        this.getPerfil().setDescripcion("Hola, soy Asier, ¡un apasionado por los coches y la velocidad!");
 
 
     }
@@ -150,7 +150,4 @@ public class Usuario implements InterfazUsuario {
 
     }
 
-    public void getData() {
-
-    }
 }

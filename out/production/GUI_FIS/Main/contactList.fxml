@@ -9,30 +9,30 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="597.0" prefWidth="438.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+<BorderPane prefHeight="492.0" prefWidth="350.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Main.Controller">
   <bottom>
-    <HBox alignment="BOTTOM_RIGHT" prefHeight="34.0" prefWidth="439.0" BorderPane.alignment="BOTTOM_RIGHT">
+    <HBox alignment="CENTER_RIGHT" prefHeight="37.999900000002526" prefWidth="350.0">
       <children>
-        <Button fx:id="bVolver" mnemonicParsing="false" onAction="#changeToPrincipal" prefHeight="34.0" prefWidth="75.0" text="Volver" textOverrun="ELLIPSIS">
+        <Button fx:id="bVolver" alignment="CENTER" contentDisplay="CENTER" defaultButton="false" mnemonicParsing="false" onAction="#changeToPrincipal" prefHeight="35.0" prefWidth="91.0" text="Volver" underline="false" wrapText="false">
           <font>
-            <Font size="15.0" />
+            <Font size="18.0" />
           </font>
         </Button>
       </children>
       <BorderPane.margin>
-        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
       </BorderPane.margin>
     </HBox>
   </bottom>
   <center>
-    <VBox onMouseMoved="#refreshList" prefHeight="200.0" prefWidth="100.0">
+    <VBox disable="false" fillWidth="true" onMouseMoved="#refreshAgendaList" pickOnBounds="true" prefHeight="200.0" prefWidth="100.0">
       <children>
-        <HBox alignment="CENTER_LEFT" onMouseClicked="#changeToSingleChat" prefHeight="100.0" prefWidth="200.0">
+        <HBox minHeight="81.0" padding="$x1" prefHeight="81.0" prefWidth="350.0" spacing="15.0" VBox.margin="$x1">
           <children>
-            <ImageView fx:id="fotoLista" fitHeight="100.0" fitWidth="133.33333333333331" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="aliasLista" alignment="CENTER" contentDisplay="CENTER" prefWidth="313.0" text="">
+            <ImageView fx:id="fotoListaAgenda" fitHeight="81.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="aliasListaAgenda" prefHeight="76.0" prefWidth="204.0" text="">
               <font>
-                <Font size="25.0" fx:id="x1" />
+                <Font size="30.0" fx:id="x2" />
               </font>
             </Label>
           </children>

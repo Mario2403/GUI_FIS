@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class ChatIndividual extends Chat {
 
-	public  ChatIndividual(ArrayList<Perfil> integrantes) {
+	public ChatIndividual(ArrayList<Perfil> integrantes) {
 	    super(integrantes);
 	
 	}

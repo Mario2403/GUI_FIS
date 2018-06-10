@@ -32,11 +32,8 @@ public class ChatGrupal extends Chat {
 	public void setNombre(String nombre) {
 	this.nombre=nombre;
 	}
-	
-	public void introducirUsuariosGrupo() {
-	
-	}
-	
+
+
 	public void introducirNombreImagenGrupo(String nombre, Image imagen) {
 	this.nombre=nombre;
 	this.imagen=imagen;

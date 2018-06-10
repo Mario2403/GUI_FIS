@@ -110,7 +110,7 @@ public class Agenda implements InterfazAgenda {
 
     @Override
     public void eliminarAgenda() {
-	    this.destroy();;
+	    this.destroy();
 
     }
 }
